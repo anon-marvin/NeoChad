@@ -11,7 +11,6 @@ function(use)
   }
   use 'CRAG666/code_runner.nvim'
   use 'folke/which-key.nvim'
-  use 'rcarriga/nvim-notify'
   use('olimorris/onedarkpro.nvim')
   use("lukas-reineke/indent-blankline.nvim")
   use('theprimeagen/harpoon')
