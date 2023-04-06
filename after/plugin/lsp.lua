@@ -57,10 +57,6 @@ lsp.configure('lua_ls', {
         }
     }
 })
-
-
-
-          
 lsp.on_attach(function(bufnr)
   local opts = {noremap=true,silent=true, buffer = bufnr, remap = false}
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
