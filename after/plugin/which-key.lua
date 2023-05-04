@@ -6,7 +6,7 @@ local toggle_float = function ()
 end
 local mappings={
     q= {":q!<cr>","Quit"},
-    w= {":w<cr>","Save"},
+    w= {":w!<cr>","Save"},
     x= {":bdelete<cr>","Close"},
     Q= {":wq!<cr>","Save & Quit"},
     s= {":Telescope find_files<cr>" ,"Search"},
