@@ -1,2 +1,2 @@
 require("marvin.option")
-require("marvin.plugin")
+require("marvin.lazy")

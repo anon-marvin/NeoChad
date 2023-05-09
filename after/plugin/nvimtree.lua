@@ -9,4 +9,3 @@ map('n','<C-l>','<C-w>l',{noremap=true ,silent=false})
 map('n','<C-j>','<C-w>j',{noremap=true ,silent=false})
 map('n','<C-k>','<C-w>k',{noremap=true ,silent=false})
 map('n','<C-b>',':NvimTreeToggle<CR>',{noremap=true ,silent=true})
-
