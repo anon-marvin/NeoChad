@@ -13,11 +13,16 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 local plugins = {
+    {
+  "L3MON4D3/LuaSnip",
+  dependencies = { "rafamadriz/friendly-snippets" },
+},
   'akinsho/bufferline.nvim',
   'nvim-lualine/lualine.nvim',
   'CRAG666/code_runner.nvim',
   'folke/which-key.nvim',
   'folke/tokyonight.nvim',
+  "windwp/nvim-autopairs",
   'olimorris/onedarkpro.nvim',
   'nvim-tree/nvim-web-devicons',
   "lukas-reineke/indent-blankline.nvim",
@@ -26,7 +31,6 @@ local plugins = {
   'nvim-treesitter/playground',
   'akinsho/toggleterm.nvim',
   'nvim-tree/nvim-tree.lua',
-  'windwp/nvim-autopairs',
   'rcarriga/nvim-notify',
     {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -49,9 +53,8 @@ local plugins = {
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},     -- Required
     {'hrsh7th/cmp-nvim-lsp'}, -- Required
-    {'L3MON4D3/LuaSnip'},     -- Required
   }
-}
+},
 
 }
   local opts = {}
