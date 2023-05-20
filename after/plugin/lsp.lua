@@ -21,19 +21,6 @@ lspconfig.lua_ls.setup {
     },
 }
 -- luasnip setup
-lspconfig.html.setup {
-  cmd = { 'html-lsp', '--stdio' },
-  filetypes = { 'html', 'htmldjango' },
-  init_options = {
-    configurationSection = { 'html', 'css', 'javascript' },
-    embeddedLanguages = {
-      css = true,
-      javascript = true
-    }
-  },
-  root_dir = lspconfig.util.root_pattern('.git', '*.html'),
-  settings = {}
-}
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
@@ -46,7 +33,7 @@ cmp.setup {
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
-        ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),  -- Down
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
@@ -112,3 +99,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, opts)
     end,
 })
+vim.fn.sign_define('LspDiagnosticsSignError', { text = '', texthl = 'LspDiagnosticsSignError' })
+vim.fn.sign_define('LspDiagnosticsSignWarning', { text = '', texthl = 'LspDiagnosticsSignWarning' })
+vim.fn.sign_define('LspDiagnosticsSignInformation', { text = '', texthl = 'LspDiagnosticsSignInformation' })
+vim.fn.sign_define('LspDiagnosticsSignHint', { text = '', texthl = 'LspDiagnosticsSignHint' })

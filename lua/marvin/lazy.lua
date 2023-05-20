@@ -32,6 +32,7 @@ local plugins = {
     'akinsho/toggleterm.nvim',
     'nvim-tree/nvim-tree.lua',
     'rcarriga/nvim-notify',
+    'numToStr/Comment.nvim',
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1',
