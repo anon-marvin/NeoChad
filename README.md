@@ -8,8 +8,6 @@ Neovim config for Linux Chads
 
 To install just use the following command 
 1. Clone the repository:
+
    ```shell
    git clone https://github.com/anon-marvin/NeoChad ~/.config/nvim
-
-
-
