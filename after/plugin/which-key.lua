@@ -14,7 +14,7 @@ local mappings = {
     r = { ":RunCode<cr>", "RunCode" },
     t = { ":ToggleTerm<cr>", "Terminal" },
     S = { ":vsplit<cr>", "Split Vertically" },
-    T = { toggle_float, "Floating Terminal" }
+    tt = { toggle_float, "Floating Terminal" }
 }
 local opts = { prefix = '<leader>' }
 wk.register(mappings, opts)

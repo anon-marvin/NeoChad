@@ -21,6 +21,19 @@ lspconfig.lua_ls.setup {
     },
 }
 -- luasnip setup
+lspconfig.html.setup {
+  cmd = { 'html-lsp', '--stdio' },
+  filetypes = { 'html', 'htmldjango' },
+  init_options = {
+    configurationSection = { 'html', 'css', 'javascript' },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    }
+  },
+  root_dir = lspconfig.util.root_pattern('.git', '*.html'),
+  settings = {}
+}
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
