@@ -1,3 +1,6 @@
 # NeoChad
 Neovim config for Linux Chads
-<h1>Hello World</h1>
+
+<h2>The config is in beta stage </h2>
+<img src="res/sample.png" width="500" height="400">
+
