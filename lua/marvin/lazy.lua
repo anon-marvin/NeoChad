@@ -19,8 +19,10 @@ local plugins = {
     },
     'akinsho/bufferline.nvim',
     'nvim-lualine/lualine.nvim',
+    'lewis6991/gitsigns.nvim',
     'CRAG666/code_runner.nvim',
     'folke/which-key.nvim',
+    "Pocco81/auto-save.nvim",
     'folke/tokyonight.nvim',
     "windwp/nvim-autopairs",
     'olimorris/onedarkpro.nvim',
@@ -38,12 +40,22 @@ local plugins = {
         tag = '0.1.1',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { 'neovim/nvim-lspconfig' },           -- Required
+    { 'neovim/nvim-lspconfig' },             -- Required
     'williamboman/mason.nvim',
     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-    { 'hrsh7th/nvim-cmp' },                -- Required
-    { 'hrsh7th/cmp-nvim-lsp' },            -- Required
+    { 'hrsh7th/nvim-cmp' },                  -- Required
+    { 'hrsh7th/cmp-nvim-lsp' },              -- Required
+    {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                -- config
+            }
+        end,
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    }
 
 }
 local opts = {}

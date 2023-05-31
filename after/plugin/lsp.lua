@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 local lspconfig = require('lspconfig')
-local servers = { 'pyright', 'tsserver', 'eslint', 'cssls', 'lua_ls', 'html', 'emmet_ls' }
+local servers = {  'clangd', 'bashls', 'pyright', 'tsserver', 'eslint', 'cssls', 'lua_ls', 'html', 'emmet_ls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
@@ -14,7 +14,6 @@ lspconfig.lua_ls.setup {
     settings = {
         Lua = {
             diagnostics = {
-                -- Get the language server to recognize the `vim` global
                 globals = { 'vim' },
             },
         },
@@ -69,16 +68,10 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
-        -- Enable completion triggered by <c-x><c-o>
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
