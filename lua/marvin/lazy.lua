@@ -18,6 +18,7 @@ local plugins = {
         dependencies = { "rafamadriz/friendly-snippets" },
     },
     'akinsho/bufferline.nvim',
+     "nvim-tree/nvim-tree.lua",
     'nvim-lualine/lualine.nvim',
     'lewis6991/gitsigns.nvim',
     'CRAG666/code_runner.nvim',
@@ -32,7 +33,6 @@ local plugins = {
     'norcalli/nvim-colorizer.lua',
     'nvim-treesitter/playground',
     'akinsho/toggleterm.nvim',
-    'nvim-tree/nvim-tree.lua',
     'rcarriga/nvim-notify',
     'numToStr/Comment.nvim',
     {
@@ -55,8 +55,7 @@ local plugins = {
             }
         end,
         dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-    }
-
+    },
 }
 local opts = {}
 require('lazy').setup(plugins, opts)

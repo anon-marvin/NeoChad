@@ -4,14 +4,14 @@ require('code_runner').setup({
     startinsert =true,
     term={
         position ="belowright",
-        size = 10,
+        size = 7,
     },
     filetype = {
         java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
         python = "python3 -u",
         cpp = "cd $dir && g++ -o $fileNameWithoutExt $fileName && ./$fileNameWithoutExt",
         c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
-        typescript = "deno run",
+        typescript = "ts-node",
         rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
         sh = "bash",
         javascript = "node",

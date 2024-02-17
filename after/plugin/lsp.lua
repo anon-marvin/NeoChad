@@ -4,12 +4,14 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 local lspconfig = require('lspconfig')
-local servers = {  'clangd', 'bashls', 'pyright', 'tsserver', 'eslint', 'cssls', 'lua_ls', 'html', 'emmet_ls' }
+local servers = { 'clangd',  'tsserver', 'eslint', 'cssls', 'lua_ls', 'html', 'emmet_language_server' }
+
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
     }
 end
+
 lspconfig.lua_ls.setup {
     settings = {
         Lua = {
@@ -19,6 +21,14 @@ lspconfig.lua_ls.setup {
         },
     },
 }
+lspconfig.eslint.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
 -- luasnip setup
 local luasnip = require 'luasnip'
 
