@@ -18,7 +18,7 @@ local plugins = {
         dependencies = { "rafamadriz/friendly-snippets" },
     },
     'akinsho/bufferline.nvim',
-     "nvim-tree/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",
     'nvim-lualine/lualine.nvim',
     'lewis6991/gitsigns.nvim',
     'CRAG666/code_runner.nvim',
@@ -55,6 +55,15 @@ local plugins = {
             }
         end,
         dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    },
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
     },
 }
 local opts = {}
