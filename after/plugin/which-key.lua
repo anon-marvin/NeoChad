@@ -9,6 +9,7 @@ local mappings = {
     w = { ":w!<cr>", "Save" },
     x = { ":bdelete<cr>", "Close" },
     Q = { ":wq!<cr>", "Save & Quit" },
+    e= { ":NvimTreeToggle<cr>", "File Explorer" },
     s = { ":Telescope find_files<cr>", "Search" },
     g = { ":Telescope live_grep<cr>", "Grep" },
     r = { ":RunCode<cr>", "RunCode" },

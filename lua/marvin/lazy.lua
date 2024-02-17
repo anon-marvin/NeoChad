@@ -37,7 +37,7 @@ local plugins = {
     'numToStr/Comment.nvim',
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { 'neovim/nvim-lspconfig' },             -- Required
