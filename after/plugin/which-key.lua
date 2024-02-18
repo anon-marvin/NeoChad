@@ -8,6 +8,7 @@ local mappings = {
     q = { ":q!<cr>", "Quit" },
     w = { ":w!<cr>", "Save" },
     x = { ":bdelete<cr>", "Close" },
+    d = { ":Trouble<cr>", "Diagnostics"},
     Q = { ":wq!<cr>", "Save & Quit" },
     e= { ":NvimTreeToggle<cr>", "File Explorer" },
     s = { ":Telescope find_files<cr>", "Search" },

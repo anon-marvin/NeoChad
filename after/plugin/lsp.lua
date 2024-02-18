@@ -31,6 +31,7 @@ lspconfig.eslint.setup({
 })
 -- luasnip setup
 local luasnip = require 'luasnip'
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
@@ -73,10 +74,8 @@ cmp.setup {
     },
 }
 
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -103,5 +102,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 vim.diagnostic.config({
-    update_in_insert = true
+    update_in_insert = true,
 })

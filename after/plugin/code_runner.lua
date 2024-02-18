@@ -4,7 +4,7 @@ require('code_runner').setup({
     startinsert =true,
     term={
         position ="belowright",
-        size = 7,
+        size = 8,
     },
     filetype = {
         java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
