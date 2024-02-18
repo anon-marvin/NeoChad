@@ -76,7 +76,8 @@ local plugins = {
             --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         }
-    }
+    },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 }
 local opts = {}
 require('lazy').setup(plugins, opts)
