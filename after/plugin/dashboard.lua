@@ -4,7 +4,7 @@ db.setup({
     theme = 'hyper',
     config = {
       week_header = {
-       enable = true,
+       enable = false,
       },
       shortcut = {
         { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },

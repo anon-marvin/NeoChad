@@ -1,4 +1,4 @@
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme onedark]]
 require('lualine').setup()
 require('lualine').setup {
     options = {
