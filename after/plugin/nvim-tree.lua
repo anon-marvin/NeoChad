@@ -1,43 +1,93 @@
-require("nvim-tree").setup({
-    git = {
-        enable = true,
-    },
-    sort = {
-        sorter = "case_sensitive",
-    },
-    view = {
-        width = 30,
-    },
-    renderer = {
-        highlight_git = true,
-        icons = {
-            show = {
-                git = true,
-            },
-        },
-    },
-    filters = {
-        dotfiles = true,
-    },
-})
-local function is_modified_buffer_open(buffers)
-    for _, v in pairs(buffers) do
-        if v.name:match("NvimTree_") == nil then
-            return true
-        end
-    end
-    return false
-end
+local g = vim.g
+vim.o.termguicolors = true
 
-vim.api.nvim_create_autocmd("BufEnter", {
-    nested = true,
-    callback = function()
-        if
-            #vim.api.nvim_list_wins() == 1
-            and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil
-            and is_modified_buffer_open(vim.fn.getbufinfo({ bufmodified = 1 })) == false
-        then
-            vim.cmd("quit")
-        end
-    end,
-})
+require 'nvim-tree'.setup {
+  diagnostics = {
+    enable = false,
+    icons = { hint = "", info = "", warning = "", error = "" }
+  },
+  filters = { dotfiles = false },
+  disable_netrw = true,
+  hijack_netrw = true,
+  open_on_tab = false,
+  hijack_cursor = true,
+  update_cwd = true,
+  update_focused_file = { enable = true, update_cwd = false },
+  view = {
+    -- allow_resize = true,
+    side = "left",
+    width = 25
+  },
+  renderer = {
+    indent_markers = { enable = true },
+    root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1003), "?:gs?^??" },
+    highlight_git = true,
+    highlight_opened_files = "none",
+    add_trailing = false,
+    icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      show = { file = true, folder = true, folder_arrow = true, git = true },
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = ""
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌"
+        }
+      }
+    }
+  },
+
+  git = { enable = true, ignore = true, timeout = 500 }
+}
+vim.g.nvim_tree_icons = {
+  default = "",
+  symlink = "",
+  git = {
+    deleted = "",
+    ignored = "◌",
+    renamed = "➜",
+    staged = "✓",
+    unmerged = "",
+    unstaged = "✗",
+    untracked = "★"
+  },
+  folder = {
+    -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
+    -- arrow_open = "",
+    -- arrow_closed = "",
+    default = "",
+    empty = "", -- 
+    empty_open = "",
+    open = "",
+    symlink = "",
+    symlink_open = ""
+  }
+}
+
+vim.api.nvim_exec([[
+function! DisableST()
+  return " "
+endfunction
+au BufEnter NvimTree setlocal statusline=%!DisableST()
+]], false)
+
+vim.cmd('hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg')

@@ -1,5 +1,5 @@
 require"toggleterm".setup {
-  size = 10,
+  size = 13,
   open_mapping = [[<c-'>]],
   shade_filetypes = {},
   shade_terminals = true,
