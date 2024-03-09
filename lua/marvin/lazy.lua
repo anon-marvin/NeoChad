@@ -18,6 +18,7 @@ local plugins = {
         dependencies = { "rafamadriz/friendly-snippets" },
     },
     'akinsho/bufferline.nvim',
+    "lewis6991/gitsigns.nvim",
     "nvim-tree/nvim-tree.lua",
     'nvim-lualine/lualine.nvim',
     'lewis6991/gitsigns.nvim',

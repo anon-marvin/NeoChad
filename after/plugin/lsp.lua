@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 local lspconfig = require('lspconfig')
-local servers = { 'clangd',  'tsserver', 'eslint', 'cssls', 'lua_ls', 'html', 'emmet_language_server','tailwindcss' }
+local servers = {'rust_analyzer', 'clangd',  'tsserver', 'eslint', 'cssls', 'lua_ls', 'html', 'emmet_language_server','tailwindcss' ,'asm_lsp'}
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
